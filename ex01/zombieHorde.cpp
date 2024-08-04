@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 19:07:39 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/04 19:09:55 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/04 19:25:54 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Zombie* zombieHorde(int N, std::string name)
 {
 	if (N <= 0)
-		return (nullptr);
+		return (NULL);
 	try {
 		Zombie *zombies = new Zombie[N];
 		for (int i = 0; i < N; i++)
@@ -24,6 +24,6 @@ Zombie* zombieHorde(int N, std::string name)
 	}
 	catch (std::bad_alloc &e) {
 		std::cerr << e.what() << std::endl;
-		return (nullptr);
+		return (NULL);
 	}
 }
