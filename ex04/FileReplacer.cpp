@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:08:51 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/06 11:18:46 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/06 11:54:15 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ bool FileReplacer::ReplacementProcess(void)
 
 std::string FileReplacer::ReadFile(void)
 {
-	std::ifstream file(this->_filename);
+	std::ifstream file(this->_filename.c_str());
 	if (!file.is_open())
 		return ("");
 	std::stringstream buffer;
@@ -44,7 +44,7 @@ std::string FileReplacer::ReadFile(void)
 
 bool FileReplacer::WriteFile(std::string& content)
 {
-	std::ofstream file(this->_filename + ".replace");
+	std::ofstream file((this->_filename + ".replace").c_str());
 	if (!file.is_open())
 		return (false);
 	file << content;
@@ -53,11 +53,18 @@ bool FileReplacer::WriteFile(std::string& content)
 
 std::string FileReplacer::Replace(std::string& content, const std::string& from, const std::string& to)
 {
-	size_t start_pos = 0;
-	while ((start_pos = content.find(from, start_pos)) != std::string::npos)
+	if (from.empty())
+		return (content);
+	
+	std::string result;
+	size_t startPos = 0;
+	size_t pos;
+	while ((pos = content.find(from, startPos)) != std::string::npos)
 	{
-		content.replace(start_pos, from.length(), to);
-		start_pos += to.length();
+		result += content.substr(startPos, pos - startPos);
+		result += to;
+		startPos = pos + from.length();
 	}
-	return (content);
+	result += content.substr(startPos);
+	return (result);
 }
