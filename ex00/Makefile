@@ -6,12 +6,12 @@
 #    By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/03 05:35:34 by akuburas          #+#    #+#              #
-#    Updated: 2024/08/03 05:38:06 by akuburas         ###   ########.fr        #
+#    Updated: 2024/09/05 02:44:55 by akuburas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C++ = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror
 NAME = zombies
 SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJS = $(SRCS:.cpp=.o)

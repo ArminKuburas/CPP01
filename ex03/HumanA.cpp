@@ -6,14 +6,14 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 08:33:24 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/05 08:54:23 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/09/05 03:25:50 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include <iostream>
 
-HumanA::HumanA(const std::string name, Weapon* weapon) : _name(name), _weapon(weapon)
+HumanA::HumanA(const std::string name, Weapon& weapon) : _name(name), _weapon(&weapon)
 {
 }
 
