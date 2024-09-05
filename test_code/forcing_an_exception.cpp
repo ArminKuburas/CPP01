@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:13:27 by akuburas          #+#    #+#             */
-/*   Updated: 2024/09/05 11:18:03 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:26:09 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 		delete[] hugeArray;
 		
 	}
-	catch (std::bad_alloc &e)
+	catch (std::bad_typeid &e)
 	{
 		std::cerr << "Forced bad_alloc: " << e.what() <<std::endl;
 	}

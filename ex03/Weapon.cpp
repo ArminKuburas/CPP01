@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 20:11:38 by akuburas          #+#    #+#             */
-/*   Updated: 2024/09/05 03:17:56 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:37:21 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void Weapon::setType(const std::string newType)
 	this->_type = newType;
 }
 
-const std::string Weapon::getType() const
+const std::string& Weapon::getType() const
 {
 	return (this->_type);
 }

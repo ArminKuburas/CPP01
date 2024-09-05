@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 20:06:35 by akuburas          #+#    #+#             */
-/*   Updated: 2024/09/05 03:21:18 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:37:30 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon
 
 	public:
 		Weapon(const std::string type);
-		const std::string getType() const;
+		const std::string& getType() const;
 		void setType(std::string newType);
 };
 
